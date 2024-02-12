@@ -41,7 +41,7 @@ window.hook('on-handle-route-change', async function () {
     let showPreHeader = false;
     const path = main.normalizePath(window.location.pathname);
 
-    if (path === main.urlPrefix + '/') {
+    if (path === main.urlPrefix + '/' || path === main.urlPrefix + '/index.html') {
         showPreHeader = true;
     }
 
@@ -193,7 +193,7 @@ window.hook('create-routes', async function () {
     main.createAdminRoute('/logout', 'Logout', '', 'admin-components/logout.js');
 
     main.createPublicRoute('/', 'Projects', '', 'components/entries.js', true);
-    main.createPublicRoute('/index.html', 'Projects', '', 'components/entries.js', true);
+    main.createPublicRoute('/index.html', 'Projects', '', 'components/entries.js', false);
     main.createPublicRoute('/blog', 'Blog', '', 'components/blog.js', true);
     main.createPublicRoute('/privacy-policy', 'Privacy Policy', '', 'components/privacy-policy.js', false);
     main.createPublicRoute('/login', 'Login', '', 'components/login.js', false);
