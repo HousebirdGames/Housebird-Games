@@ -1,0 +1,16 @@
+User-agent: *
+
+Allow: /calculator/
+Allow: /timeless-tales/
+Allow: /minigame-collection/
+Allow: /html-table-csv-converter
+
+Disallow: /login/
+Disallow: /registration/
+Disallow: /settings/
+Disallow: /analytics/
+Disallow: /entries/
+
+Disallow: /uploads/
+
+Sitemap: https://housebird.games/sitemap.xml

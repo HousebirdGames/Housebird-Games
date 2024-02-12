@@ -1,0 +1,71 @@
+{
+    "name": "Housebird Games",
+    "short_name": "Housebird Games",
+    "description": "Explore calming games, thrilling quests, intriguing puzzles, and innovative prototypes on various platforms for a joyful and relaxing gaming experience.",
+    "lang": "en",
+    "dir": "ltr",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#242a3a",
+    "theme_color": "#58a4e3",
+    "icons": [
+        {
+            "src": "img/favicons/Favicon-48x48.png",
+            "sizes": "48x48",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "img/favicons/Favicon-48x48.png",
+            "sizes": "48x48",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "img/favicons/Favicon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "img/favicons/Favicon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "img/favicons/Favicon-464x464.png",
+            "sizes": "464x464",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "img/favicons/Favicon-464x464.png",
+            "sizes": "464x464",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "img/favicons/Favicon-3000x3000.png",
+            "sizes": "3000x3000",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "img/screenshots/HousebirdGamesFrontPage.png",
+            "sizes": "1900x1080",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "View the projects and blog of Housebird Games."
+        },
+        {
+            "src": "img/screenshots/HousebirdGamesFrontPage.png",
+            "sizes": "1900x1080",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "View the projects and blog of Housebird Games."
+        }
+    ]
+}

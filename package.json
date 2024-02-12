@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@img/sharp-win32-x64": "^0.33.1",
+    "chalk": "^5.3.0",
+    "fast-glob": "^3.3.0",
+    "fs": "^0.0.1-security",
+    "imagemin": "^8.0.1",
+    "imagemin-avif": "^0.1.4",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-webp": "^8.0.0",
+    "progress": "^2.0.3",
+    "sharp": "^0.33.1",
+    "ssh2-sftp-client": "^10.0.3"
+  }
+}
