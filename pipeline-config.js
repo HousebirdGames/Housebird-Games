@@ -5,7 +5,7 @@ module.exports = {
     databaseDir: "database",
     uncompressedDir: "img/uploads-uncompressed",
     compressedDir: "uploads",
-    faviconsInputPath: "img/logos-originals/Stubenvogel Fun Logo Round.png",
+    faviconsInputPath: "img/logos-originals/Stubenvogel Fun Logo Round with Padding.png",
     faviconsOutputDir: "img/favicons",
     faviconsBaseFileName: "Favicon",
     faviconSizes: [
@@ -27,7 +27,6 @@ module.exports = {
         "img/screenshots",
         "img/elements",
         "img/logos-originals",
-        "game-servers",
         "fonts",
         "uploads"
     ],
