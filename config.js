@@ -1,5 +1,5 @@
 export default {
-  "version": "2.0.0.33",
+  "version": "2.0.0.37",
   "pageTitle": "Housebird Games",
   "cookieIdentifier": "HousebirdGames",
   "foundationYear": 2020,
@@ -10,7 +10,8 @@ export default {
     "/calculator",
     "/timeless-tales",
     "/minigame-collection",
-    "/html-table-csv-converter"
+    "/html-table-csv-converter",
+    "/game-servers"
   ],
   "openCookiePopupAtPageLoad": false,
   "showNewUpdateNotes": false,

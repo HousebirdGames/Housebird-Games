@@ -18,6 +18,8 @@ Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 # Remove Server Banner to avoid providing potential attackers with clues about how to exploit known vulnerabilities in specific versions
 ServerSignature Off
 
+Options -Indexes
+
 <Files "index.html">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
     Header set Pragma "no-cache"
