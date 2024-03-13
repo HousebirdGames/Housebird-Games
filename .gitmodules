@@ -1,0 +1,3 @@
+[submodule "Birdhouse"]
+	path = Birdhouse
+	url = https://github.com/HousebirdGames/Birdhouse
