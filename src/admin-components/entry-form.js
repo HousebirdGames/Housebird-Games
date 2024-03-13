@@ -19,10 +19,10 @@ export default async function EntryForm() {
             });
 
         Promise.all([entriesPromise])
-            .then(([existingEntries]) => {
-                existingEntries.sort((a, b) => a.title.localeCompare(b.title));
+            .then(([existingEntriesResponse]) => {
+                existingEntriesResponse.items.sort((a, b) => a.title.localeCompare(b.title));
 
-                resolve(buildFormContent(existingEntries));
+                resolve(buildFormContent(existingEntriesResponse.items));
 
                 setTimeout(setupEventHandlers, 0);
             })
@@ -309,7 +309,8 @@ async function refreshExistingEntries(currentID) {
         if (!response.ok) {
             throw new Error('Failed to fetch entries');
         }
-        const existingEntries = await response.json();
+        const responseJson = await response.json();
+        const existingEntries = responseJson.items;
         const existingEntriesDropdown = document.getElementById('existingEntry');
         existingEntriesDropdown.innerHTML = '<option value="">New entry</option>' + existingEntries.map(entry => `<option value="${entry.id}">${entry.title}</option>`).join('');
         existingEntriesDropdown.value = currentID;

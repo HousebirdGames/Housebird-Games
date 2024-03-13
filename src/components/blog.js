@@ -22,7 +22,8 @@ export default async function Blog(count = null) {
             entries = JSON.parse(entriesInSession);
         } else {
             const entriesResponse = await fetch(getRelativePath('./database/get_entries.php') + '?state=public&allposts');
-            entries = await entriesResponse.json();
+            const data = await entriesResponse.json();
+            entries = data.items;
             try {
                 sessionStorage.setItem('blogEntries', JSON.stringify(entries));
             } catch (e) {

@@ -345,7 +345,8 @@ window.hook('add-dynamic-routes', async function (path) {
 
     let entries;
     try {
-        entries = await entriesResponse.json();
+        const data = await entriesResponse.json();
+        entries = data.items;
     } catch (error) {
         if (entriesResponse.status == 503) {
             console.log('503: Offline');

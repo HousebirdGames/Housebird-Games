@@ -1054,6 +1054,11 @@ input[type=file] {
     flex-grow: 1;
 }
 
+#entriesContainer {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .entrySection,
 .blogSection {
     display: flex;
