@@ -1,4 +1,5 @@
-Birdhouse
 /sftp-config.js
 database
 game-servers
+/uploads/*
+!/uploads/.gitkeep
