@@ -17,10 +17,10 @@ export default async function EntriesOverview(standalone = true) {
 
                 return response.json();
             })
-            .then(entries => {
-                entryDataCollection = entries;
+            .then(response => {
+                entryDataCollection = response.items;
 
-                const entriesHTML = entries.map((entry, index) => `
+                const entriesHTML = response.items.map((entry, index) => `
                     <div class="entryOverviewItem outer" data-index="${index}"'>
                         <div class=""><a href="${getRelativePath(entry.slug)}" class="white">${entry.title}</a></div>
                         <div class="expandingSpacer"></div>
