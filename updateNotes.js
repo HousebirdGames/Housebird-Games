@@ -8,7 +8,8 @@ export const updateNotes = [
             "Transitioned to the Birdhouse framework",
             "With the Birdhouse framework, housebird.games becomes a progressive web app",
             "Improved page loading, especially for slower connections",
-            "Added skeleton loaders"
+            "Added skeleton loaders",
+            "Blog and Projects now use infinite scrolling for a more seamless experience"
         ]
     },
     {
