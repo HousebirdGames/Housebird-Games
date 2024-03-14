@@ -3,10 +3,10 @@ import Analytics from "../../Birdhouse/src/modules/analytics.js";
 import { markdown } from "../../Birdhouse/src/modules/markdown.js";
 import InfiniteScroll from "../../Birdhouse/src/modules/infinite-scroll.js";
 
-let entriesInSession = [];
 let admin = false;
 let index = 1;
 export default async function Entries() {
+    admin = await isAdminPromise;
     index = 1;
     Analytics('Showing Projects');
 
@@ -18,32 +18,14 @@ export default async function Entries() {
 }
 
 async function displayEntries(entries) {
-    console.log('displayEntries');
     let html = ''
     for (const entry of entries) {
-        console.log('entry', entry);
         html += await displayEntry(entry);
     }
     return html;
 }
 
-function entryExistsInSession(entry) {
-    return entriesInSession.some(e => e.id === entry.id);
-}
-
 async function displayEntry(entry) {
-    entriesInSession = JSON.parse(sessionStorage.getItem('homepageEntries'));
-    if (entriesInSession === null) {
-        entriesInSession = [];
-    }
-    if (!entryExistsInSession(entry)) {
-        entriesInSession.push(entry);
-    } else {
-        const index = entriesInSession.findIndex(e => e.id === entry.id);
-        entriesInSession[index] = entry;
-    }
-    sessionStorage.setItem('homepageEntries', JSON.stringify(entriesInSession));
-
     let additionalLinks = '';
 
     if (Array.isArray(entry.additionalLinks)) {
@@ -106,12 +88,8 @@ let container;
 
 async function setupEventHandlers() {
     container = document.getElementById(containerID);
-    entriesInSession = JSON.parse(sessionStorage.getItem('homepageEntries'));
-    if (entriesInSession === null) {
-        entriesInSession = [];
-    }
     const limit = 3;
-    const page = (entriesInSession.length > 0 && !admin) ? Math.ceil(entriesInSession.length / limit) : 1;
+    const page = 1;
     infiniteScroll = InfiniteScroll({
         initialLimit: limit,
         add: 0,
@@ -119,16 +97,9 @@ async function setupEventHandlers() {
         container: container,
         fetchURL: fetchURL,
         displayFunction: displayEntries,
+        storageType: admin ? null : 'session',
         emptyMessage: 'Currently no entries available.'
     });
 
     await infiniteScroll.setup(false);
-
-    admin = await isAdminPromise;
-    if (admin) {
-        sessionStorage.removeItem('homepageEntries');
-    }
-    if (entriesInSession) {
-        container.innerHTML = await displayEntries(entriesInSession);
-    }
 }

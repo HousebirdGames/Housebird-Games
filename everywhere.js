@@ -139,7 +139,9 @@ window.hook('on-component-loaded', async function () {
 });
 
 window.hook('on-content-loaded', async function () {
-
+    if (main.dynamicRoute) {
+        await main.addAdditionalComponent('./components/blog.js', 3);
+    }
 });
 
 window.hook('page-loaded', async function () {
@@ -358,7 +360,7 @@ window.hook('add-dynamic-routes', async function (path) {
     }
 
     if (entries && entries.length > 0) {
-        main.createPublicRoute('/' + path.toLowerCase(), 'Entry', '', 'components/entry.js', false, entries);
+        main.createPublicRoute('/' + path.toLowerCase(), 'Entry', '', 'components/entry.js', false, entries, true);
         return true
     }
     return false;
