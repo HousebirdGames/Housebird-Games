@@ -84,7 +84,7 @@ async function displayEntry(entry) {
     return `
     <div id="${entry.title.replace(" ", "-")}" class="blogSection fade-in-fast ${additionalClass}">
         <div class="blogBox">
-            <a href="${urlPrefix + '/' + entry.slug}" class="blogImage bg-image-${entry.slug}"></a>
+            <a href="${urlPrefix + '/' + entry.slug}" class="blogImage bg-image-${entry.slug}" aria-label="Read the blog post: ${entry.title}" alt="Image for the Post: ${entry.title}"></a>
             <div class="blogInfoBox">
                 <a href="${urlPrefix + '/' + entry.slug}"><h2 class="entryTitle">${entry.title}</h2></a>
                 ${entryNotice}

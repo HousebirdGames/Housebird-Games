@@ -20,7 +20,13 @@ export default async function EntryForm() {
 
         Promise.all([entriesPromise])
             .then(([existingEntriesResponse]) => {
-                existingEntriesResponse.items.sort((a, b) => a.title.localeCompare(b.title));
+                existingEntriesResponse.items.sort((a, b) => {
+                    if (a.title && b.title) {
+                        return a.title.localeCompare(b.title);
+                    } else {
+                        return 0;
+                    }
+                });
 
                 resolve(buildFormContent(existingEntriesResponse.items));
 
