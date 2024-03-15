@@ -95,12 +95,16 @@ function setupEventHandlers() {
 
 function buildFormContent(existingEntries) {
     let markdownCopyLinks = '';
+    let combinedMarkdownElements = '';
 
     for (let elementName in markdownElements) {
         let element = markdownElements[elementName];
         let linkHTML = `<a href="#" data-md-element="${element}" class="filename copy-to-clipboard">${elementName}</a>`;
         markdownCopyLinks += linkHTML;
+        combinedMarkdownElements += element;
     }
+
+    markdownCopyLinks += `<a href="#" data-md-element="${combinedMarkdownElements}" class="filename copy-to-clipboard">Copy All</a>`;
 
     return `
         <div class="contentBox">

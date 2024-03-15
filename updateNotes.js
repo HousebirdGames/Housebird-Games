@@ -9,7 +9,9 @@ export const updateNotes = [
             "With the Birdhouse framework, housebird.games becomes a progressive web app",
             "Improved page loading, especially for slower connections",
             "Added skeleton loaders",
-            "Blog and Projects now use infinite scrolling for a more seamless experience"
+            "Blog and Projects now use infinite scrolling for a more seamless experience",
+            "Added buttons that link to my GitHub and LinkedIn profiles as well as to the Housebird Games Itch.io page",
+            "Added a contact form"
         ]
     },
     {

@@ -13,7 +13,7 @@
     --background-secondary-highlight: #83c7ff;
     --background-secondary-light: rgba(88, 164, 227, .24);
     --adminColor: rgb(175, 149, 65);
-    --warning: rgb(158, 54, 54);
+    --warning: rgb(241, 217, 137);
     --none: rgb(255, 255, 255, 0);
 
     --border: 0.1rem solid white;
@@ -466,7 +466,7 @@ header .headerButton:active::after {
 
 @media (max-width: 540px) {
     #preHeader.extended {
-        height: 20rem;
+        height: 24rem;
     }
 
     .preHeaderImageWrap h2 {
@@ -598,6 +598,44 @@ li::marker {
     color: var(--font-highlight);
 }
 
+label:hover {
+    cursor: pointer;
+}
+
+.preHeaderLinks {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 1rem;
+    bottom: 0;
+    right: 1rem;
+    z-index: 3;
+}
+
+.preHeaderLinks a {
+    background: var(--background-secondary);
+    padding: 0.4rem;
+    border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+    transition: var(--transitionFast);
+}
+
+.preHeaderLinks a:hover {
+    background: var(--background-secondary-highlight);
+    padding-bottom: 1rem;
+    box-shadow: 0 0 1.4rem var(--background-secondary);
+}
+
+.preHeaderLinks a img {
+    max-height: 2.4rem;
+}
+
+@media screen and (max-width: 600px) {
+    .preHeaderLinks a img {
+        max-height: 1.8rem;
+    }
+}
+
 .popup-content button.updateVersionButton {
     min-width: unset;
 }
@@ -623,6 +661,10 @@ li::marker {
 .updateVersionButton:active {
     background-color: var(--none);
     color: var(--background-secondary-highlight);
+}
+
+.displayNone {
+    display: none;
 }
 
 button,
@@ -681,6 +723,90 @@ button.menu,
     text-align: left;
     box-sizing: border-box;
     font-size: var(--fontSizeSmall);
+}
+
+.field.invalid {
+    border-color: var(--warning);
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    font-family: var(--fontFamily);
+    font-size: var(--fontSize);
+    font-weight: 600;
+    background: var(--lighter);
+    color: var(--font);
+    border-radius: var(--borderRadiusButtons);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    align-self: flex-start;
+    min-width: 2.4rem;
+    height: 2.4rem;
+    aspect-ratio: 1;
+    margin: 0;
+    border-radius: var(--borderRadiusButtons);
+    transition: 0.4s ease-in-out;
+}
+
+input[type="checkbox"]:hover {
+    appearance: none;
+    border: 0.1rem solid var(--fontColor);
+    transition: 0.4s ease-in-out;
+}
+
+input[type="checkbox"]:active {
+    background: var(--fontColor);
+    transition: 0s ease-in-out;
+}
+
+input[type="checkbox"]:checked {
+    appearance: none;
+    text-align: center;
+    color: var(--font);
+    transition: 0.4s ease-in-out;
+}
+
+input[type="checkbox"]:checked:hover {
+    appearance: none;
+    transition: 0.4s ease-in-out;
+}
+
+input[type="checkbox"]:checked:active {
+    background: var(--fontColor);
+    transition: 0s ease-in-out;
+}
+
+input[type="checkbox"]::before {
+    display: block;
+    content: " ";
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1.4em;
+    height: 1.4em;
+    border-radius: 50%;
+    background: transparent;
+    transition: 0.2s ease-in-out;
+}
+
+input[type="checkbox"]:checked::before {
+    background: var(--fontColor);
+}
+
+.centerInput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.centerInput {
+    font-weight: normal;
+    gap: 1rem;
+}
+
+.centerInput.right {
+    justify-content: flex-end;
 }
 
 .clickable-text {
@@ -994,6 +1120,7 @@ textarea {
 
 input[type=submit] {
     width: fit-content;
+    align-self: flex-end;
 }
 
 input[type=checkbox],
@@ -1054,7 +1181,8 @@ input[type=file] {
     flex-grow: 1;
 }
 
-#entriesContainer, #blogEntriesContainer {
+#entriesContainer,
+#blogEntriesContainer {
     width: 100%;
     box-sizing: border-box;
 }

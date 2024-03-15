@@ -4,10 +4,10 @@ import { markdown } from "../../Birdhouse/src/modules/markdown.js";
 import InfiniteScroll from "../../Birdhouse/src/modules/infinite-scroll.js";
 
 let admin = false;
-let index = 1;
+let index = 0;
 export default async function Entries() {
     admin = await isAdminPromise;
-    index = 1;
+    index = 0;
     Analytics('Showing Projects');
 
     action(setupEventHandlers);

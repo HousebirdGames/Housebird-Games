@@ -20,6 +20,10 @@ export default async function Settings() {
                 Registration Enabled:
                 <input type="checkbox" id="registration" name="registration">
             </label>
+            <label for="contactForm" class="centerInput left">
+                <input type="checkbox" id="contactForm" name="contactForm">
+                <p>Contact Form Enabled</p>
+            </label>
             <label for="preheaderImages">
                 Preheader Images (one per line):
                 <textarea id="preheaderImages" name="preheaderImages"></textarea>
@@ -40,6 +44,7 @@ function setupEventHandlers() {
     const settingsForm = document.getElementById('settingsForm');
     const maintenanceCheckbox = document.getElementById('maintenanceMode');
     const registrationCheckbox = document.getElementById('registration');
+    const contactFormCheckbox = document.getElementById('contactForm');
     const preheaderImages = document.getElementById('preheaderImages');
 
     const mediaLibraryButton = document.getElementById('openMediaLibraryButton');
@@ -61,9 +66,11 @@ function setupEventHandlers() {
             getSetting('maintenance_mode', false),
             getSetting('registration_enabled', false),
             getSetting('preheader_images', false),
-        ]).then(([maintenance_mode, registration_enabled, preheader_images]) => {
+            getSetting('contact_form_enabled', false),
+        ]).then(([maintenance_mode, registration_enabled, contact_form_enabled, preheader_images]) => {
             maintenanceCheckbox.checked = maintenance_mode;
             registrationCheckbox.checked = registration_enabled;
+            contactFormCheckbox.checked = contact_form_enabled;
 
             let images = [];
 
@@ -81,12 +88,14 @@ function setupEventHandlers() {
                 const newSettings = {
                     maintenance_mode: maintenanceCheckbox.checked,
                     registration_enabled: registrationCheckbox.checked,
+                    contact_form_enabled: contactFormCheckbox.checked,
                     preheader_images: preheaderImages.value.split('\n').filter(image => image.trim() !== '').join(','),
                 };
 
                 Promise.all([
                     setSetting('maintenance_mode', newSettings.maintenance_mode),
                     setSetting('registration_enabled', newSettings.registration_enabled),
+                    setSetting('contact_form_enabled', newSettings.contact_form_enabled),
                     setSetting('preheader_images', newSettings.preheader_images),
                 ]).then(() => {
                     alertPopup('Done', "Settings updated successfully");

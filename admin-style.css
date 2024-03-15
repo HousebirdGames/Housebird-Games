@@ -13,12 +13,28 @@
     flex-wrap: wrap;
     gap: 1rem;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-start;
 }
 
-.filters {
+.entryOverviewItem .entryInfo,
+.filters label {
+    background: var(--lighter);
+    padding: 0.4rem;
+    border-radius: var(--borderRadius);
+    transition: var(--transitionFast);
+}
+
+.filters label{
+    padding-right: 1rem;
+    width: unset;
+    display: flex;
+    flex-direction: row;
     gap: 0.4rem;
-    justify-content: start;
+    align-items: center;
+}
+
+.filters label:hover {
+    background: var(--muchlighter);
 }
 
 .entryOverviewItem.outer {
@@ -350,4 +366,107 @@ textarea#contentTextarea {
 .markdownElements a:hover {
     scale: 1.05;
     transition: var(--transitionFast);
+}
+
+/* Analytics Table */
+
+#analytics-table-container {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    outline: 1px solid var(--muchlighter);
+}
+
+th,
+td {
+    padding: 0.4rem;
+    text-align: left;
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+th {
+    background: var(--muchlighter);
+    font-size: var(--fontSizeLarge);
+}
+
+tr:nth-child(even) {
+    background: var(--lighter);
+}
+
+@media screen and (max-width: 800px) {
+    #analytics-table-container {
+        font-size: 0.54rem;
+    }
+
+    th {
+        font-size: 0.64rem;
+    }
+
+    th,
+    td {
+        padding: 0.1rem;
+    }
+
+    .entryLinks {
+        justify-content: center;
+    }
+}
+
+#bar-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 10rem;
+    border: 1px solid var(--fontColor);
+    padding: 1rem;
+    overflow-x: auto;
+    overflow: visible;
+}
+
+.bar {
+    min-width: 1px;
+    width: 100%;
+    background: var(--adminColor);
+    text-align: center;
+    color: var(--fontColor);
+    position: relative;
+}
+
+.tooltip {
+    visibility: hidden;
+    width: 10rem;
+    background: var(--muchDarker);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+    text-shadow: 2px 2px 0.4rem black;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -0.4rem;
+    border-width: 0.4rem;
+    border-style: solid;
+    border-color: var(--muchDarker) transparent transparent transparent;
+}
+
+.bar:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
 }

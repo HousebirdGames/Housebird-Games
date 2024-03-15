@@ -49,6 +49,14 @@ window.hook('on-handle-route-change', async function () {
     if (showPreHeader) {
         preHeaderElement = preHeaderElement || createPreHeaderElement(headerElement);
 
+        let preHeaderLinks = `
+        <div class="preHeaderLinks">
+        <a href="https://github.com/HousebirdGames" rel=”nofollow”><img src="img/other-logos/github-mark-white.svg" alt="GitHub"></a>
+        <a href="https://housebird.itch.io/" rel=”nofollow”><img src="img/other-logos/itchio-logo-textless-white.svg" alt="Itch.io"></a>
+        <a href="https://www.linkedin.com/in/felix-t-vogel-73a64218b/" rel=”nofollow”><img src="img/other-logos/In-White-128@2x.png" alt="LinkedIn"></a>
+        </div>
+        `;
+
         preHeaderElement.innerHTML = `
                         <div id="preHeaderImageWrap" class="preHeaderImageWrap">
                             <div class="preHeaderOverlay1"></div>
@@ -57,6 +65,7 @@ window.hook('on-handle-route-change', async function () {
                                 <img src="img/logos-originals/Housebird Games Logo Round With Name Compressed.png" class="preHeaderLogo" alt="Housebird Games Logo">
                                 <h2>Creating fun, one game at a time</h2>
                             </div>
+                            ${preHeaderLinks}
                         </div>
                         `;
     }
@@ -201,7 +210,8 @@ window.hook('create-routes', async function () {
     main.createPublicRoute('/login', 'Login', '', 'components/login.js', false);
     main.createPublicRoute('/registration', 'Registration', '', 'components/registration.js', false);
 
-    main.createPublicRoute('/contact', 'Contact', '', 'components/message.js', false, Messages.contact);
+    main.createPublicRoute('/contact', 'Contact', '', 'components/contact.js', false);
+    //main.createPublicRoute('/contact', 'Contact', '', 'components/message.js', false, Messages.contact);
 });
 
 window.hook('get-cookies-list', async function () {
