@@ -18,7 +18,7 @@ module.exports = {
     manifestIconSizes: [
 
     ],
-    statisticsFile: "Birdhouse/pipeline-log.txt",
+    statisticsFile: "pipeline-log.txt",
     ignoredFileTypes: [
         ".zip",
         ".rar",
@@ -41,6 +41,8 @@ module.exports = {
     ],
     directoriesToExcludeFromCache: [
         "img/screenshots",
+        "database/.git",
+        "database/EXAMPLE_housebird_games_config",
         "uploads"
     ]
 };

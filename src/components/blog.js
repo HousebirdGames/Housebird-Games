@@ -53,7 +53,8 @@ async function displayEntries(entries) {
 }
 
 async function displayEntry(entry) {
-    if (maxIndex > 0 && index > maxIndex || entry.path) {
+    if (maxIndex > 0 && index > maxIndex) {
+        infiniteScroll.teardown();
         return '';
     }
 

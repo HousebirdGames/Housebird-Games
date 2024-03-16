@@ -1,5 +1,6 @@
 /sftp-config.js
 database
 game-servers
+pipeline-log.txt
 /uploads/*
 !/uploads/.gitkeep
