@@ -67,7 +67,7 @@ function setupEventHandlers() {
             getSetting('registration_enabled', false),
             getSetting('preheader_images', false),
             getSetting('contact_form_enabled', false),
-        ]).then(([maintenance_mode, registration_enabled, contact_form_enabled, preheader_images]) => {
+        ]).then(([maintenance_mode, registration_enabled, preheader_images, contact_form_enabled]) => {
             maintenanceCheckbox.checked = maintenance_mode;
             registrationCheckbox.checked = registration_enabled;
             contactFormCheckbox.checked = contact_form_enabled;
