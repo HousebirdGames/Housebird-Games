@@ -626,6 +626,10 @@ label:hover {
     box-shadow: 0 0 1.4rem var(--background-secondary);
 }
 
+.preHeaderLinks a:active {
+    padding-bottom: 0.64rem;
+}
+
 .preHeaderLinks a img {
     max-height: 2.4rem;
 }

@@ -51,9 +51,10 @@ window.hook('on-handle-route-change', async function () {
 
         let preHeaderLinks = `
         <div class="preHeaderLinks">
-        <a href="https://github.com/HousebirdGames" rel=”nofollow”><img src="img/other-logos/github-mark-white.svg" alt="GitHub"></a>
-        <a href="https://housebird.itch.io/" rel=”nofollow”><img src="img/other-logos/itchio-logo-textless-white.svg" alt="Itch.io"></a>
-        <a href="https://www.linkedin.com/in/felix-t-vogel-73a64218b/" rel=”nofollow”><img src="img/other-logos/In-White-128@2x.png" alt="LinkedIn"></a>
+        <a href="https://www.patreon.com/stubenvogel"><img src="img/other-logos/PATREON_SYMBOL_1_WHITE_RGB.svg" alt="Patreon"></a>
+        <a href="https://github.com/HousebirdGames"><img src="img/other-logos/github-mark-white.svg" alt="GitHub"></a>
+        <a href="https://housebird.itch.io/"><img src="img/other-logos/itchio-logo-textless-white.svg" alt="Itch.io"></a>
+        <a href="https://www.linkedin.com/in/felix-t-vogel-73a64218b/"><img src="img/other-logos/In-White-128@2x.png" alt="LinkedIn"></a>
         </div>
         `;
 
