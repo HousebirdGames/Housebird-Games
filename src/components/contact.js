@@ -24,7 +24,7 @@ export default async function Contact() {
             
             <label class="centerInput left">
             <input type="checkbox" id="consent" name="consent" required>
-            <p>I acknowledge that I have read and understand the <a href="${urlPrefix}/privacy-policy" class="underline">Privacy Policy</a> for this experimental website.</p>
+            <p>I acknowledge that I have read and understand the <a href="${urlPrefix}/privacy-policy" class="underline">Privacy Policy</a>.</p>
             </label>
 
             <input type="submit" value="Send now" class="highlight"></input>

@@ -1,5 +1,5 @@
 export default {
-  "version": "2.0.0.64",
+  "version": "2.0.0.67",
   "pageTitle": "Housebird Games",
   "cookieIdentifier": "HousebirdGames",
   "foundationYear": 2020,
