@@ -150,7 +150,7 @@ window.hook('on-component-loaded', async function () {
 
 window.hook('on-content-loaded', async function () {
     if (main.dynamicRoute) {
-        await main.addAdditionalComponent('./components/blog.js', 3);
+        await main.addAdditionalComponent('./components/blog', 3);
     }
 });
 
@@ -197,22 +197,22 @@ window.hook('add-markdown-patterns', async function (html) {
 });
 
 window.hook('create-routes', async function () {
-    main.createAdminRoute('/entries', 'New Entry', '', 'admin-components/entry-form.js');
-    main.createAdminRoute('/entries-overview', 'Entries Overview', '', 'admin-components/entries-overview.js');
-    main.createAdminRoute('/settings', 'Settings', '', 'admin-components/settings.js');
-    main.createAdminRoute('/media-library', 'Media', '', 'admin-components/media-library.js');
-    main.createAdminRoute('/analytics', 'Analytics', '', 'admin-components/analytics-overview.js');
-    main.createAdminRoute('/logout', 'Logout', '', 'admin-components/logout.js');
+    main.createAdminRoute('/entries', 'New Entry', '', 'admin-components/entry-form');
+    main.createAdminRoute('/entries-overview', 'Entries Overview', '', 'admin-components/entries-overview');
+    main.createAdminRoute('/settings', 'Settings', '', 'admin-components/settings');
+    main.createAdminRoute('/media-library', 'Media', '', 'admin-components/media-library');
+    main.createAdminRoute('/analytics', 'Analytics', '', 'admin-components/analytics-overview');
+    main.createAdminRoute('/logout', 'Logout', '', 'admin-components/logout');
 
-    main.createPublicRoute('/', 'Projects', '', 'components/entries.js', true);
-    main.createPublicRoute('/index.html', 'Projects', '', 'components/entries.js', false);
-    main.createPublicRoute('/blog', 'Blog', '', 'components/blog.js', true);
-    main.createPublicRoute('/privacy-policy', 'Privacy Policy', '', 'components/privacy-policy.js', false);
-    main.createPublicRoute('/login', 'Login', '', 'components/login.js', false);
-    main.createPublicRoute('/registration', 'Registration', '', 'components/registration.js', false);
+    main.createPublicRoute('/', 'Projects', '', 'components/entries', true);
+    main.createPublicRoute('/index.html', 'Projects', '', 'components/entries', false);
+    main.createPublicRoute('/blog', 'Blog', '', 'components/blog', true);
+    main.createPublicRoute('/privacy-policy', 'Privacy Policy', '', 'components/privacy-policy', false);
+    main.createPublicRoute('/login', 'Login', '', 'components/login', false);
+    main.createPublicRoute('/registration', 'Registration', '', 'components/registration', false);
 
-    main.createPublicRoute('/contact', 'Contact', '', 'components/contact.js', false);
-    //main.createPublicRoute('/contact', 'Contact', '', 'components/message.js', false, Messages.contact);
+    main.createPublicRoute('/contact', 'Contact', '', 'components/contact', false);
+    //main.createPublicRoute('/contact', 'Contact', '', 'components/message', false, Messages.contact);
 });
 
 window.hook('get-cookies-list', async function () {
@@ -371,7 +371,7 @@ window.hook('add-dynamic-routes', async function (path) {
     }
 
     if (entries && entries.length > 0) {
-        main.createPublicRoute('/' + path.toLowerCase(), 'Entry', '', 'components/entry.js', false, entries, true);
+        main.createPublicRoute('/' + path.toLowerCase(), 'Entry', '', 'components/entry', false, entries, true);
         return true
     }
     return false;

@@ -3,6 +3,7 @@ module.exports = {
     productionPath: "housebird_games",
     stagingPath: "housebird_games_staging",
     htaccessFile: "STRATO.htaccess",
+    basePath: "/",
     databaseDir: "database",
     uncompressedDir: "img/uploads-uncompressed",
     compressedDir: "uploads",
@@ -11,13 +12,13 @@ module.exports = {
     faviconsFileName: "Favicon",
     faviconSizes: [
 
-    ],
+        ],
     manifestIconPath: "img/logos-originals/Stubenvogel Fun Logo Round Icon.png",
     manifestIconOutputDir: "img/icons",
     manifestIconFileName: "Icon",
     manifestIconSizes: [
 
-    ],
+        ],
     statisticsFile: "pipeline-log.txt",
     ignoredFileTypes: [
         ".zip",
@@ -26,7 +27,7 @@ module.exports = {
         ".txt",
         ".psd",
         ".htaccess"
-    ],
+        ],
     directoriesToInclude: [
         "src",
         "fonts",
@@ -38,11 +39,17 @@ module.exports = {
         "img/other-logos",
         "fonts",
         "uploads"
-    ],
+        ],
     directoriesToExcludeFromCache: [
         "img/screenshots",
         "database/.git",
         "database/EXAMPLE_housebird_games_config",
         "uploads"
-    ]
-};
+        ],
+    preReleaseScripts: [
+
+        ],
+    postReleaseScripts: [
+
+        ]
+    };

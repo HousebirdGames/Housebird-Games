@@ -1,5 +1,5 @@
 self.config = {
-  "version": "2.0.0.67",
+  "version": "2.0.0.69",
   "pageTitle": "Housebird Games",
   "cookieIdentifier": "HousebirdGames",
   "foundationYear": 2020,
@@ -19,5 +19,6 @@ self.config = {
   "enableInputValidation": true,
   "enableImageComparisonSliders": true,
   "enableInfoBar": false,
-  "userLoginEnabled": true
+  "userLoginEnabled": true,
+  "redirect404ToRoot": false
 };
