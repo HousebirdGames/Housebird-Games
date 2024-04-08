@@ -1,4 +1,4 @@
-import { isAdminPromise, urlPrefix, getRelativePath, action } from "../../Birdhouse/src/main.js";
+import { isAdminPromise, urlPrefix, getRelativePath, action, scroll } from "../../Birdhouse/src/main.js";
 import Analytics from "../../Birdhouse/src/modules/analytics.js";
 import { markdown } from "../../Birdhouse/src/modules/markdown.js";
 import InfiniteScroll from "../../Birdhouse/src/modules/infinite-scroll.js";
@@ -64,7 +64,7 @@ async function displayEntry(entry) {
     }
 
     return `
-                <div id="${entry.title.replace(" ", "-")}" class="entrySection fade-in-fast ${additionalClass}">
+                <div id="${entry.title.replaceAll(" ", "-")}" class="entrySection fade-in-fast ${additionalClass}">
                     <div class="entryBox">
                         <div class="entryImageBox"><a href="${entry.mainLink}" class="entryImageLink"><img src="uploads/${entry.image}" alt="${entry.title}" class="entryImage" loading="lazy"></a></div>
                         <div class="entryInfoBox">
@@ -102,4 +102,21 @@ async function setupEventHandlers() {
     });
 
     await infiniteScroll.setup(false);
+
+    const hash = window.location.hash.substring(1);
+    if (hash != '') {
+        const preHeader = document.getElementById('preHeader');
+        while (!preHeader.classList.contains('extended')) {
+            await new Promise(r => setTimeout(r, 200));
+        }
+
+        while (document.getElementById(hash) == null && infiniteScroll.isSetup) {
+            await infiniteScroll.handleScroll(true);
+            await new Promise(r => setTimeout(r, 0));
+        }
+
+        setTimeout(() => {
+            scroll(document.getElementById(hash));
+        }, 800);
+    }
 }
