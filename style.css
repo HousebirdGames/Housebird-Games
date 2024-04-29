@@ -106,6 +106,15 @@ image {
     gap: 1rem;
 }
 
+#content .blogPost {
+    opacity: 0;
+}
+
+#content.fade-in-fast .blogPost {
+    opacity: 1;
+    animation: fade-in-fast 0.2s;
+}
+
 .blogPost h2,
 .blogPost h3,
 .blogPost h4,
