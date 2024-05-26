@@ -13,13 +13,13 @@ module.exports = {
     faviconsFileName: "Favicon",
     faviconSizes: [
 
-    ],
+        ],
     manifestIconPath: "img/logos-originals/Stubenvogel Fun Logo Round Icon.png",
     manifestIconOutputDir: "img/icons",
     manifestIconFileName: "Icon",
     manifestIconSizes: [
 
-    ],
+        ],
     statisticsFile: "pipeline-log.txt",
     ignoredFileTypes: [
         ".zip",
@@ -28,7 +28,7 @@ module.exports = {
         ".txt",
         ".psd",
         ".htaccess"
-    ],
+        ],
     directoriesToInclude: [
         "src",
         "fonts",
@@ -40,15 +40,17 @@ module.exports = {
         "img/other-logos",
         "fonts",
         "uploads"
-    ],
+        ],
     directoriesToExcludeFromCache: [
         "img/screenshots",
         "uploads"
-    ],
+        ],
     preReleaseScripts: [
 
-    ],
+        ],
     postReleaseScripts: [
 
-    ]
-};
+        ],
+    appIconSourcePath: "img/logos-originals/Birdhouse-Logo.jpg",
+    appIconOutputDir: "img/app-icons"
+    };

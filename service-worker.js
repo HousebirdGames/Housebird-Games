@@ -1,7 +1,7 @@
 /*
 The service worker is a fundamental component for enabling a progressive web app to operate offline.
-By caching essential files listed in the filesToCache.js script—automatically generated during the
-project's build process—it ensures that these files are available from the cache when no network
+By caching essential files listed in the filesToCache.js script — automatically generated during the
+project's build process — it ensures that these files are available from the cache when no network
 connection is available.
 
 
@@ -19,7 +19,7 @@ code of 503, signaling service unavailability. This approach ensures data availa
 offline scenarios, enhancing the user experience by leveraging modern web capabilities.
 */
 
-self.CACHE_VERSION = "2.0.0.80";
+self.CACHE_VERSION = "2.0.0.81";
 importScripts('./config-sw.js' + `?v=${self.CACHE_VERSION}`);
 self.importScripts('Birdhouse/filesToCache.js' + `?v=${self.CACHE_VERSION}`);
 

@@ -1,5 +1,5 @@
 self.config = {
-  "version": "2.0.0.80",
+  "version": "2.0.0.81",
   "pageTitle": "Housebird Games",
   "cookieIdentifier": "HousebirdGames",
   "foundationYear": 2020,
@@ -20,5 +20,9 @@ self.config = {
   "enableImageComparisonSliders": true,
   "enableInfoBar": false,
   "userLoginEnabled": true,
-  "redirect404ToRoot": false
+  "redirect404ToRoot": false,
+  "appIcon": "img/app-icons/icon",
+  "trustedImageDomains": [],
+  "useMouseDown": true,
+  "scrollPositionRecallLimit": 20
 };
