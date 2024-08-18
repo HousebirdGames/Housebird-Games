@@ -1,5 +1,5 @@
 self.config = {
-  "version": "2.0.0.81",
+  "version": "2.0.0.83",
   "pageTitle": "Housebird Games",
   "cookieIdentifier": "HousebirdGames",
   "foundationYear": 2020,
@@ -24,5 +24,6 @@ self.config = {
   "appIcon": "img/app-icons/icon",
   "trustedImageDomains": [],
   "useMouseDown": true,
+  "backNavigationClosesPopups": true,
   "scrollPositionRecallLimit": 20
 };
