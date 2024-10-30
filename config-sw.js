@@ -1,5 +1,5 @@
 self.config = {
-  "version": "2.0.0.83",
+  "version": "2.0.0.103",
   "pageTitle": "Housebird Games",
   "cookieIdentifier": "HousebirdGames",
   "foundationYear": 2020,
@@ -11,8 +11,12 @@ self.config = {
     "/timeless-tales",
     "/minigame-collection",
     "/html-table-csv-converter",
+    "/stormworks-creations-manager",
+    "/creations-manager",
+    "/creations-manager-staging",
     "/game-servers"
   ],
+  "pwaExcludedPaths": [],
   "openCookiePopupAtPageLoad": false,
   "showNewUpdateNotes": false,
   "maintenanceModeWithFailedBackend": false,
@@ -24,6 +28,8 @@ self.config = {
   "appIcon": "img/app-icons/icon",
   "trustedImageDomains": [],
   "useMouseDown": true,
+  "useFlexPopups": false,
   "backNavigationClosesPopups": true,
-  "scrollPositionRecallLimit": 20
+  "scrollPositionRecallLimit": 20,
+  "domainPath": ""
 };

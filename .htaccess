@@ -33,6 +33,9 @@ RewriteCond %{REQUEST_URI} !^/timeless-tales(/|$)
 RewriteCond %{REQUEST_URI} !^/minigame-collection(/|$)
 RewriteCond %{REQUEST_URI} !^/calculator(/|$)
 RewriteCond %{REQUEST_URI} !^/html-table-csv-converter(/|$)
+RewriteCond %{REQUEST_URI} !^/stormworks-creations-manager(/|$)
+RewriteCond %{REQUEST_URI} !^/creations-manager(/|$)
+RewriteCond %{REQUEST_URI} !^/creations-manager-staging(/|$)
 RewriteCond %{REQUEST_URI} !^/robots.txt
 RewriteCond %{REQUEST_URI} !^/sitemap.xml
 

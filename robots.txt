@@ -4,6 +4,7 @@ Allow: /calculator/
 Allow: /timeless-tales/
 Allow: /minigame-collection/
 Allow: /html-table-csv-converter
+Allow: /creations-manager
 
 Disallow: /login/
 Disallow: /registration/
