@@ -1,10 +1,11 @@
 self.config = {
-  "version": "2.0.0.103",
+  "version": "2.0.0.109",
   "pageTitle": "Housebird Games",
   "cookieIdentifier": "HousebirdGames",
   "foundationYear": 2020,
   "pageDescription": "Explore calming games, thrilling quests, intriguing puzzles, and innovative prototypes on various platforms for a joyful and relaxing gaming experience.",
   "localhostPath": "/housebird_games",
+  "scope": "/",
   "excludedPaths": [
     "/database/logout.php",
     "/calculator",
@@ -16,7 +17,6 @@ self.config = {
     "/creations-manager-staging",
     "/game-servers"
   ],
-  "pwaExcludedPaths": [],
   "openCookiePopupAtPageLoad": false,
   "showNewUpdateNotes": false,
   "maintenanceModeWithFailedBackend": false,
@@ -31,5 +31,6 @@ self.config = {
   "useFlexPopups": false,
   "backNavigationClosesPopups": true,
   "scrollPositionRecallLimit": 20,
+  "pwaExcludedPaths": [],
   "domainPath": ""
 };
