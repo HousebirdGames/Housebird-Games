@@ -1,5 +1,5 @@
 self.config = {
-  "version": "2.0.0.115",
+  "version": "2.0.0.116",
   "pageTitle": "Housebird Games",
   "cookieIdentifier": "HousebirdGames",
   "foundationYear": 2020,
