@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(nvm use:*)",
+      "Read(//var/home/fvogel/.nvm/versions/node/**)",
+      "Read(//usr/local/bin/**)",
+      "Read(//usr/bin/**)"
+    ]
+  }
+}
